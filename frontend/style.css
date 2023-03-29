@@ -1,0 +1,332 @@
+@import "https://fonts.googleapis.com/css?family=Noto+Sans";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+body {
+    padding: 0;
+    margin: 0;
+    background: -moz-linear-gradient(-45deg, #f1cfcf 0, #edebbe 25%, #bbe1ae 50%, #a1d1cb 70%, #af98c3 100%);
+    background: -webkit-linear-gradient(-45deg, #f1cfcf 0, #edebbe 25%, #bbe1ae 50%, #a1d1cb 70%, #af98c3 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  font-family: 'Arial', sans-serif;
+    background-color: #F9F9F9;
+    color: #333333;
+}
+
+#loader {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 90px;
+
+}
+
+#intro {
+  text-align: center;
+}
+
+#guide2 {
+  font-size: 25px;
+  margin: 0 2rem 0 2rem;
+  border-radius: 14px;
+  padding: 21px;
+  font-weight: bold;
+  background: #00000033;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 4.3rem 1rem 1rem 1rem;
+  text-align: center;
+}
+
+img {
+  margin-top: 50px;
+  width: 185px;
+  height: 270px;
+  margin-bottom: 2rem;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
+input[type="date"],
+select {
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif;
+  width: 200px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  margin-top: 0.6rem;
+  margin-bottom: 1.4rem;
+}
+
+select {
+width: 100%;
+max-width: 200px;
+}
+
+select:focus,
+input[type="date"]:focus {
+outline: none;
+box-shadow: 0 0 5px #555555;
+}
+
+select option:first-child {
+color: gray;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    margin-top: 0.8rem;
+    margin-bottom: 4.3rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #0062cc;
+}
+
+/* Add some responsiveness */
+@media only screen and (max-width: 600px) {
+h1 {
+    font-size: 1.7rem;
+}
+
+#guide2 {
+  font-size: 16px;
+  padding: 10px;
+}
+
+img {
+    width: 110px;
+    height: 145px;
+}
+
+label {
+    font-size: 1rem;
+}
+
+input[type="date"],
+select {
+    font-size: 1rem;
+    padding: 0.3rem;
+    margin-bottom: 2rem;
+    width: 199.6px;
+}
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(25, 147, 147, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(25, 147, 147, 0.2);
+}
+
+.chat-thread {
+  margin: 24px auto 0 auto;
+  padding: 0 20px 0 0;
+  list-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.chat-thread li {
+  position: relative;
+  clear: both;
+  display: inline-block;
+  padding: 16px 30px 16px 30px;
+  margin: 0 0 20px 0;
+  font: 16px/20px "Noto Sans", sans-serif;
+  border-radius: 10px;
+}
+
+/* Chat - Avatar */
+.chat-thread li:before {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  content: "";
+}
+
+/* Chat - Speech Bubble Arrow */
+.chat-thread li:after {
+  position: absolute;
+  top: 15px;
+  content: "";
+  width: 0;
+  height: 0;
+}
+
+.chat-thread li:nth-of-type(even) {
+  animation: show-chat-odd 0.15s 1 ease-in;
+  -moz-animation: show-chat-odd 0.15s 1 ease-in;
+  -webkit-animation: show-chat-odd 0.15s 1 ease-in;
+  float: right;
+  margin-right: 80px;
+  color: #000000;
+  background: #0000002b
+}
+
+.chat-thread li:nth-of-type(even):before {
+  right: -80px;
+  background-image: url("User.png");
+  background-size: 50px;
+}
+
+.chat-thread li:nth-of-type(even):after {
+  border-right: 15px solid transparent;
+  border-top: 15px solid #0000002b;
+  right: -15px;
+}
+
+.chat-thread li:nth-of-type(odd) {
+  animation: show-chat-even 0.15s 1 ease-in;
+  -moz-animation: show-chat-even 0.15s 1 ease-in;
+  -webkit-animation: show-chat-even 0.15s 1 ease-in;
+  float: left;
+  margin-left: 80px;
+  color: #000000;
+  background: #ffffff42
+}
+
+.chat-thread li:nth-of-type(odd):before {
+  left: -80px;
+  background-image: url("BearHug.png");
+  background-size: 50px;
+}
+
+.chat-thread li:nth-of-type(odd):after {
+  border-left: 15px solid transparent;
+  border-top: 15px solid #ffffff42;
+  left: -15px;
+}
+
+.chat-window {
+  border: none;
+  border-radius: 50px;
+  position: relative;
+  box-shadow: 0 1px 6px 0 #3688da47;
+  background: white;
+
+  position: fixed;
+  bottom: 18px;
+}
+
+.chat-window-message {
+  margin: 0 5% 0 5%;
+  width: 90%;
+
+  height: 48px;
+  font: 25px/48px "Noto Sans", sans-serif;
+  background: none;
+  color: #0ad5c1;
+  border: 0;
+  outline: none;
+}
+
+
+/* Small screens */
+@media all and (max-width: 768px) {
+  .chat-thread {
+    width: 90%;
+    height: 543px;
+  }
+
+  .chat-window {
+    left: 5%;
+    width: 90%;
+  }
+
+  /* .chat-window-message {
+    margin: 0 10% 0 10%;
+  } */
+}
+
+/* Medium and large screens */
+@media all and (min-width: 769px) {
+  .chat-thread {
+    width: 50%;
+    height: 640px;
+  }
+
+  .chat-window {
+    left: 25%;
+    width: 50%;
+  }
+}
+
+@media all and (min-width: 1610px) {
+  #guide {
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+}
+
+@keyframes show-chat-even {
+  0% {
+    margin-left: -480px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@-moz-keyframes show-chat-even {
+  0% {
+    margin-left: -480px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@-webkit-keyframes show-chat-even {
+  0% {
+    margin-left: -480px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@keyframes show-chat-odd {
+  0% {
+    margin-right: -480px;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+@-moz-keyframes show-chat-odd {
+  0% {
+    margin-right: -480px;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+@-webkit-keyframes show-chat-odd {
+  0% {
+    margin-right: -480px;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
